@@ -13,6 +13,7 @@ import org.newdawn.slick.state.StateBasedGame;
 public class Tetris extends StateBasedGame {
 public static int STATE_INT_MENU = 0;
 public static int STATE_INT_GAME = 1;
+public static int STATE_INT_SCORE = 2;
 	/**
 	 * @param name The title of the dialog of the main program.
 	 */
@@ -32,6 +33,7 @@ public static int STATE_INT_GAME = 1;
 	public void initStatesList(GameContainer container) throws SlickException {
 		addState(new Menu());
 		addState(new GameState());
+		addState(new ScoresState());
 
 	}
 

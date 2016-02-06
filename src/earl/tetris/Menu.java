@@ -87,7 +87,7 @@ public class Menu extends BasicGameState {
 			theGame.enterState(Tetris.STATE_INT_GAME, new FadeOutTransition(Color.black), new FadeInTransition(Color.black));
 			break;
 		case Input.KEY_2:
-			// TODO: Implement later
+			theGame.enterState(Tetris.STATE_INT_SCORE, new FadeOutTransition(Color.black), new FadeInTransition(Color.black));
 			break;
 		case Input.KEY_3:
 			// TODO: Implement later
