@@ -15,7 +15,7 @@ import org.newdawn.slick.Color;
 
 /**
  * @author Erik.Schmitt
- *
+ * Test change for egit extension
  */
 public class Menu extends BasicGameState {
 
