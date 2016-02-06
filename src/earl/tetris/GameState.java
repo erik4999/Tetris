@@ -1,6 +1,3 @@
-/**
- * 
- */
 package earl.tetris;
 
 import org.newdawn.slick.GameContainer;
@@ -10,13 +7,13 @@ import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 
 /**
- * @author Erik.Schmitt
- *
+ * @author Earl-team
+ * This is the class for the Game state
  */
 public class GameState extends BasicGameState {
 
 	/**
-	 * 
+	 *
 	 */
 	public GameState() {
 		// TODO Auto-generated constructor stub

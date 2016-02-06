@@ -1,6 +1,3 @@
-/**
- * 
- */
 package earl.tetris;
 
 import org.newdawn.slick.GameContainer;
@@ -14,8 +11,8 @@ import org.newdawn.slick.state.transition.FadeOutTransition;
 import org.newdawn.slick.Color;
 
 /**
- * @author Erik.Schmitt
- * Test change for egit extension
+ * @author Earl-team
+ * Menu state class
  */
 public class Menu extends BasicGameState {
 
