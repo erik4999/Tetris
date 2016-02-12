@@ -3,6 +3,7 @@ package earl.tetris;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.SlickException;
+import org.newdawn.slick.geom.Rectangle;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
 
@@ -12,9 +13,9 @@ import org.newdawn.slick.state.StateBasedGame;
  */
 public class GameState extends BasicGameState {
 
-	/**
-	 *
-	 */
+	private int x = 10;
+	private int y = 10;
+	
 	public GameState() {
 		// TODO Auto-generated constructor stub
 	}
@@ -41,9 +42,10 @@ public class GameState extends BasicGameState {
 	 */
 	@Override
 	public void render(GameContainer container, StateBasedGame game, Graphics g) throws SlickException {
-		// TODO Auto-generated method stub
+		
+		g.draw(new Rectangle(x,y,50,50));
 
-	}
+	}//End render method
 
 	/*
 	 * (non-Javadoc)
@@ -54,9 +56,10 @@ public class GameState extends BasicGameState {
 	 */
 	@Override
 	public void update(GameContainer container, StateBasedGame game, int delta) throws SlickException {
-		// TODO Auto-generated method stub
-
-	}
+		
+		y ++;
+		
+	}//End update method
 
 	/*
 	 * (non-Javadoc)
