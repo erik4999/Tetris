@@ -86,7 +86,7 @@ public class GameState extends BasicGameState {
 		return Tetris.STATE_INT_GAME;
 	}//End getID method
 	
-	public void keyReleased(int key, char c) {
+	public void keyPressed(int key, char c) {
 		switch (key) {
 		case Input.KEY_RIGHT:
 			x += 4;
