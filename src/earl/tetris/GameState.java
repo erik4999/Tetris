@@ -12,8 +12,7 @@ import org.newdawn.slick.state.transition.FadeInTransition;
 import org.newdawn.slick.state.transition.FadeOutTransition;
 
 /**
- * @author Earl-team
- * This is the class for the Game state
+ * @author Earl-team This is the class for the Game state
  */
 public class GameState extends BasicGameState {
 
@@ -21,7 +20,7 @@ public class GameState extends BasicGameState {
 	private int y = 10;
 	private int frameCount = 0;
 	private final int MAX_FPS = 30;
-	
+
 	public GameState() {
 		// TODO Auto-generated constructor stub
 	}
@@ -47,12 +46,11 @@ public class GameState extends BasicGameState {
 	 */
 	@Override
 	public void render(GameContainer container, StateBasedGame game, Graphics g) throws SlickException {
-		
-		if (frameCount < MAX_FPS)
-			g.draw(new Rectangle(x,y,50,50));
-		
 
-	}//End render method
+		if (frameCount < MAX_FPS)
+			g.draw(new Rectangle(x, y, 50, 50));
+
+	}// End render method
 
 	/*
 	 * (non-Javadoc)
@@ -63,17 +61,15 @@ public class GameState extends BasicGameState {
 	 */
 	@Override
 	public void update(GameContainer container, StateBasedGame game, int delta) throws SlickException {
-		
+
 		if (frameCount < MAX_FPS)
 			frameCount++;
-		else
-		{
+		else {
 			y++;
 			frameCount = 0;
 		}
-		
-		
-	}//End update method
+
+	}// End update method
 
 	/*
 	 * (non-Javadoc)
@@ -84,8 +80,8 @@ public class GameState extends BasicGameState {
 	public int getID() {
 		// TODO Auto-generated method stub
 		return Tetris.STATE_INT_GAME;
-	}//End getID method
-	
+	}// End getID method
+
 	public void keyPressed(int key, char c) {
 		switch (key) {
 		case Input.KEY_RIGHT:
@@ -97,6 +93,6 @@ public class GameState extends BasicGameState {
 		default:
 			break;
 		}
-	}//End keyReleased method
+	}// End keyReleased method
 
 }

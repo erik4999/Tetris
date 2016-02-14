@@ -11,8 +11,7 @@ import org.newdawn.slick.state.transition.FadeOutTransition;
 import org.newdawn.slick.Color;
 
 /**
- * @author Earl-team
- * Menu state class
+ * @author Earl-team Menu state class
  */
 public class Menu extends BasicGameState {
 
@@ -84,10 +83,12 @@ public class Menu extends BasicGameState {
 	public void keyReleased(int key, char c) {
 		switch (key) {
 		case Input.KEY_1:
-			theGame.enterState(Tetris.STATE_INT_GAME, new FadeOutTransition(Color.black), new FadeInTransition(Color.black));
+			theGame.enterState(Tetris.STATE_INT_GAME, new FadeOutTransition(Color.black),
+					new FadeInTransition(Color.black));
 			break;
 		case Input.KEY_2:
-			theGame.enterState(Tetris.STATE_INT_SCORE, new FadeOutTransition(Color.black), new FadeInTransition(Color.black));
+			theGame.enterState(Tetris.STATE_INT_SCORE, new FadeOutTransition(Color.black),
+					new FadeInTransition(Color.black));
 			break;
 		case Input.KEY_3:
 			// TODO: Implement later

@@ -1,12 +1,27 @@
 package earl.tetris;
 
-public class Piece {
+import org.newdawn.slick.Graphics;
+import org.newdawn.slick.geom.Rectangle;
 
-	public Piece() {
-		// TODO Auto-generated constructor stub
+public class Piece extends Rectangle {
+	private static final int PIECE_MAX = 8;
+
+	public Piece(int x, int y) {
+		super(x, y, PIECE_MAX, PIECE_MAX);
+
 	}
-	
-	public void move(){}//End move method
-	
+
+	public void move(int x, int y) {
+
+		// TODO: bounds incident handling
+		this.x += x;
+		this.y += y;
+
+	}// End move method
+
+	public void move(int y) {
+
+		move(0, y);
+	}
 
 }
