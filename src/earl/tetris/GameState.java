@@ -1,11 +1,15 @@
 package earl.tetris;
 
+import org.newdawn.slick.Color;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
+import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
 import org.newdawn.slick.geom.Rectangle;
 import org.newdawn.slick.state.BasicGameState;
 import org.newdawn.slick.state.StateBasedGame;
+import org.newdawn.slick.state.transition.FadeInTransition;
+import org.newdawn.slick.state.transition.FadeOutTransition;
 
 /**
  * @author Earl-team
@@ -15,6 +19,8 @@ public class GameState extends BasicGameState {
 
 	private int x = 10;
 	private int y = 10;
+	private int frameCount = 0;
+	private final int MAX_FPS = 30;
 	
 	public GameState() {
 		// TODO Auto-generated constructor stub
@@ -29,7 +35,6 @@ public class GameState extends BasicGameState {
 	 */
 	@Override
 	public void init(GameContainer container, StateBasedGame game) throws SlickException {
-		// TODO Auto-generated method stub
 
 	}
 
@@ -43,7 +48,9 @@ public class GameState extends BasicGameState {
 	@Override
 	public void render(GameContainer container, StateBasedGame game, Graphics g) throws SlickException {
 		
-		g.draw(new Rectangle(x,y,50,50));
+		if (frameCount < MAX_FPS)
+			g.draw(new Rectangle(x,y,50,50));
+		
 
 	}//End render method
 
@@ -57,7 +64,14 @@ public class GameState extends BasicGameState {
 	@Override
 	public void update(GameContainer container, StateBasedGame game, int delta) throws SlickException {
 		
-		y ++;
+		if (frameCount < MAX_FPS)
+			frameCount++;
+		else
+		{
+			y++;
+			frameCount = 0;
+		}
+		
 		
 	}//End update method
 
@@ -70,6 +84,19 @@ public class GameState extends BasicGameState {
 	public int getID() {
 		// TODO Auto-generated method stub
 		return Tetris.STATE_INT_GAME;
-	}
+	}//End getID method
+	
+	public void keyReleased(int key, char c) {
+		switch (key) {
+		case Input.KEY_RIGHT:
+			x += 4;
+			break;
+		case Input.KEY_LEFT:
+			x -= 4;
+			break;
+		default:
+			break;
+		}
+	}//End keyReleased method
 
 }
