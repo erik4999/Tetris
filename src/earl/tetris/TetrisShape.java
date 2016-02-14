@@ -3,6 +3,8 @@
  */
 package earl.tetris;
 
+import java.util.ArrayList;
+
 import org.newdawn.slick.Graphics;
 
 /**
@@ -11,13 +13,15 @@ import org.newdawn.slick.Graphics;
  */
 public abstract class TetrisShape {
 
-	private int x;
-	private int y;
+	protected int x;
+	protected int y;
+	protected ArrayList<Piece> pieces;
 
 	/**
 	 * 
 	 */
 	public TetrisShape(int x, int y) {
+		pieces = new ArrayList<Piece>();
 		this.x = x;
 		this.y = y;
 	}
@@ -30,6 +34,6 @@ public abstract class TetrisShape {
 
 	public abstract void loadPieces();
 
-	public abstract Piece[] getPieces();
+	public abstract ArrayList<Piece> getPieces();
 
 }

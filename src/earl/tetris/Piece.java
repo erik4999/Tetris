@@ -4,7 +4,7 @@ import org.newdawn.slick.Graphics;
 import org.newdawn.slick.geom.Rectangle;
 
 public class Piece extends Rectangle {
-	private static final int PIECE_MAX = 8;
+	public static final int PIECE_MAX = 8;
 
 	public Piece(int x, int y) {
 		super(x, y, PIECE_MAX, PIECE_MAX);

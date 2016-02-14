@@ -20,9 +20,11 @@ public class GameState extends BasicGameState {
 	private int y = 10;
 	private int frameCount = 0;
 	private final int MAX_FPS = 30;
+	private Square testSquare;
 
 	public GameState() {
-		// TODO Auto-generated constructor stub
+		testSquare = new Square(x, y);
+		
 	}
 
 	/*
@@ -33,7 +35,8 @@ public class GameState extends BasicGameState {
 	 * org.newdawn.slick.state.StateBasedGame)
 	 */
 	@Override
-	public void init(GameContainer container, StateBasedGame game) throws SlickException {
+	public void init(GameContainer container, StateBasedGame game)
+			throws SlickException {
 
 	}
 
@@ -45,10 +48,15 @@ public class GameState extends BasicGameState {
 	 * org.newdawn.slick.state.StateBasedGame, org.newdawn.slick.Graphics)
 	 */
 	@Override
-	public void render(GameContainer container, StateBasedGame game, Graphics g) throws SlickException {
-
-		if (frameCount < MAX_FPS)
-			g.draw(new Rectangle(x, y, 50, 50));
+	public void render(GameContainer container, StateBasedGame game, Graphics g)
+			throws SlickException {
+	
+		if (frameCount < MAX_FPS) {
+			for (int i = 0; i < testSquare.pieces.size(); i++) {
+				g.draw(testSquare.pieces.get(i));
+				
+			}
+		}
 
 	}// End render method
 
@@ -60,7 +68,8 @@ public class GameState extends BasicGameState {
 	 * org.newdawn.slick.state.StateBasedGame, int)
 	 */
 	@Override
-	public void update(GameContainer container, StateBasedGame game, int delta) throws SlickException {
+	public void update(GameContainer container, StateBasedGame game, int delta)
+			throws SlickException {
 
 		if (frameCount < MAX_FPS)
 			frameCount++;
