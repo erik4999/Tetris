@@ -16,15 +16,14 @@ import org.newdawn.slick.state.transition.FadeOutTransition;
  */
 public class GameState extends BasicGameState {
 
-	private int x = 10;
-	private int y = 10;
 	private int frameCount = 0;
 	private final int MAX_FPS = 30;
-	private Square testSquare;
+	private TetrisShape activeShape;
+	private StateBasedGame theGame;
 
 	public GameState() {
-		testSquare = new Square(x, y);
-		
+		activeShape = new Square(50, 0);
+
 	}
 
 	/*
@@ -35,9 +34,8 @@ public class GameState extends BasicGameState {
 	 * org.newdawn.slick.state.StateBasedGame)
 	 */
 	@Override
-	public void init(GameContainer container, StateBasedGame game)
-			throws SlickException {
-
+	public void init(GameContainer container, StateBasedGame game) throws SlickException {
+		theGame = game;
 	}
 
 	/*
@@ -48,13 +46,12 @@ public class GameState extends BasicGameState {
 	 * org.newdawn.slick.state.StateBasedGame, org.newdawn.slick.Graphics)
 	 */
 	@Override
-	public void render(GameContainer container, StateBasedGame game, Graphics g)
-			throws SlickException {
-	
+	public void render(GameContainer container, StateBasedGame game, Graphics g) throws SlickException {
+
 		if (frameCount < MAX_FPS) {
-			for (int i = 0; i < testSquare.pieces.size(); i++) {
-				g.draw(testSquare.pieces.get(i));
-				
+			for (int i = 0; i < activeShape.pieces.size(); i++) {
+				g.draw(activeShape.pieces.get(i));
+
 			}
 		}
 
@@ -68,13 +65,17 @@ public class GameState extends BasicGameState {
 	 * org.newdawn.slick.state.StateBasedGame, int)
 	 */
 	@Override
-	public void update(GameContainer container, StateBasedGame game, int delta)
-			throws SlickException {
+	public void update(GameContainer container, StateBasedGame game, int delta) throws SlickException {
 
 		if (frameCount < MAX_FPS)
 			frameCount++;
 		else {
-			y++;
+			if (container.getInput().isKeyDown(Input.KEY_LEFT))
+				activeShape.move(-Piece.PIECE_MAX, 0);
+			if (container.getInput().isKeyDown(Input.KEY_RIGHT))
+				activeShape.move(Piece.PIECE_MAX, 0);
+
+			activeShape.move(0, Piece.PIECE_MAX);
 			frameCount = 0;
 		}
 
@@ -87,18 +88,20 @@ public class GameState extends BasicGameState {
 	 */
 	@Override
 	public int getID() {
-		// TODO Auto-generated method stub
 		return Tetris.STATE_INT_GAME;
 	}// End getID method
 
 	public void keyPressed(int key, char c) {
 		switch (key) {
 		case Input.KEY_RIGHT:
-			x += 4;
+			activeShape.move(Piece.PIECE_MAX, 0);
 			break;
 		case Input.KEY_LEFT:
-			x -= 4;
+			activeShape.move(-Piece.PIECE_MAX, 0);
 			break;
+		case Input.KEY_ESCAPE:
+			theGame.enterState(Tetris.STATE_INT_MENU, new FadeOutTransition(Color.black),
+					new FadeInTransition(Color.black));
 		default:
 			break;
 		}

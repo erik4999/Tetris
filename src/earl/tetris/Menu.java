@@ -16,6 +16,7 @@ import org.newdawn.slick.Color;
 public class Menu extends BasicGameState {
 
 	private StateBasedGame theGame;
+	private GameContainer theContainer;
 
 	/**
 	 * 
@@ -34,7 +35,7 @@ public class Menu extends BasicGameState {
 	@Override
 	public void init(GameContainer container, StateBasedGame game) throws SlickException {
 		theGame = game;
-
+		theContainer = container;
 	}
 
 	/*
@@ -91,7 +92,7 @@ public class Menu extends BasicGameState {
 					new FadeInTransition(Color.black));
 			break;
 		case Input.KEY_3:
-			// TODO: Implement later
+			theContainer.exit();
 			break;
 		default:
 			break;

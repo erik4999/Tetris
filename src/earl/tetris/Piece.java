@@ -13,9 +13,8 @@ public class Piece extends Rectangle {
 
 	public void move(int x, int y) {
 
-		// TODO: bounds incident handling
-		this.x += x;
-		this.y += y;
+		this.setX(this.getX() + x);
+		this.setY(this.getY() + y);
 
 	}// End move method
 

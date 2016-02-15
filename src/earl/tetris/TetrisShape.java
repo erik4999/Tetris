@@ -28,12 +28,20 @@ public abstract class TetrisShape {
 
 	public abstract void rotate();
 
-	public abstract void move();
-
 	public abstract void dismantle();
 
 	public abstract void loadPieces();
 
-	public abstract ArrayList<Piece> getPieces();
+	public ArrayList<Piece> getPieces() {
 
+		return pieces;
+	}
+
+	public void move(int x, int y) {
+		for (int i = 0; i < pieces.size(); i++) {
+
+			pieces.get(i).move(x, y);
+		}
+
+	}
 }
