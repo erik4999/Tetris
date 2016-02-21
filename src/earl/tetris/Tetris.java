@@ -33,8 +33,8 @@ public class Tetris extends StateBasedGame {
 	 */
 	@Override
 	public void initStatesList(GameContainer container) throws SlickException {
-		addState(new Menu());
 		addState(new GameState());
+		addState(new Menu());
 		addState(new ScoresState());
 
 	}

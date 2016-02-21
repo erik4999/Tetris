@@ -27,7 +27,7 @@ public class ScoresState extends BasicGameState {
 	 */
 	public ScoresState() {
 		// TODO Auto-generated constructor stub
-	}
+	}//End constructor
 
 	/*
 	 * (non-Javadoc)
@@ -40,7 +40,7 @@ public class ScoresState extends BasicGameState {
 	public void init(GameContainer arg0, StateBasedGame arg1) throws SlickException {
 		theGame = arg1;
 		theContainer = arg0;
-	}
+	}//End init method
 
 	/*
 	 * (non-Javadoc)
@@ -54,7 +54,7 @@ public class ScoresState extends BasicGameState {
 		g.setColor(Color.white);
 		g.drawString("Top Scores", 50, 10);
 
-	}
+	}//End render method
 
 	/*
 	 * (non-Javadoc)
@@ -67,7 +67,7 @@ public class ScoresState extends BasicGameState {
 	public void update(GameContainer arg0, StateBasedGame arg1, int arg2) throws SlickException {
 		// TODO Auto-generated method stub
 
-	}
+	}//End update method
 
 	/*
 	 * (non-Javadoc)
@@ -75,10 +75,10 @@ public class ScoresState extends BasicGameState {
 	 * @see org.newdawn.slick.state.BasicGameState#getID()
 	 */
 	@Override
-	public int getID() {
-		// TODO Auto-generated method stub
+		public int getID() {
+		
 		return Tetris.STATE_INT_SCORE;
-	}
+	}//End getID method
 
 	public void keyReleased(int key, char c) {
 		switch (key) {
@@ -88,6 +88,6 @@ public class ScoresState extends BasicGameState {
 		default:
 			break;
 
-		}
-	}
-}
+		}//End switch
+	}//End keyReleased method
+}//End ScoresState

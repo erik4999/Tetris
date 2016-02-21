@@ -10,7 +10,7 @@ public class SimpleTest extends BasicGame {
 
 	public SimpleTest() {
 		super("SimpleTest");
-	}
+	}//End constructor
 
 	@Override
 	public void init(GameContainer container) throws SlickException {
