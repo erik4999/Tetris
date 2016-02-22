@@ -7,19 +7,19 @@ public class Square extends TetrisShape {
 	public Square(int x, int y) {
 		super(x, y);
 		loadPieces();
-	}//End constructor
+	}// End constructor
 
 	@Override
 	public void rotate() {
 		// TODO Auto-generated method stub
 
-	}//End rotate method
+	}// End rotate method
 
 	@Override
 	public void dismantle() {
 		// TODO Auto-generated method stub
 
-	}//End dismantle method
+	}// End dismantle method
 
 	@Override
 	public void loadPieces() {
@@ -33,6 +33,6 @@ public class Square extends TetrisShape {
 		this.pieces.add(p3);
 		this.pieces.add(p4);
 
-	}//End loadPieces method
+	}// End loadPieces method
 
-}//End Square class
+}// End Square class
